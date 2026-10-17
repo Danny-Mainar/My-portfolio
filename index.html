@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duncan Mwaura | Electrical Engineer & Developer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Animated PCB Circuit Background Canvas -->
+    <canvas id="pcb-bg"></canvas>
+
+    <!-- Navigation Header -->
+    <header id="header">
+        <div class="nav-container">
+            <a href="#" class="logo">DM<span class="dot">.</span></a>
+            <nav class="nav-menu">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#articles" class="nav-link">Articles</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="btn-nav">Contact</a>
+            </nav>
+            <button id="hamburger" aria-label="Toggle navigation menu">☰</button>
+        </div>
+    </header>
+
+    <!-- Smooth Scroll Momentum Container -->
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <!-- Main Content Area -->
+            <main>
+                
+                <!-- Hero Section -->
+                <section id="hero" class="hero-section">
+                    <div class="hero-content reveal">
+                        <span class="badge">Electrical & Electronics Engineer</span>
+                        <h1>ENGINEER &<br><span class="highlight">TECHNICAL WRITER</span></h1>
+                        <p>Bridging core electrical systems, industrial automation, and quantitative software development with robust engineering precision.</p>
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn-primary">Explore My Work</a>
+                            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual reveal">
+                        <div class="terminal-card">
+                            <div class="terminal-header">
+                                <span class="terminal-dot red"></span>
+                                <span class="terminal-dot yellow"></span>
+                                <span class="terminal-dot green"></span>
+                            </div>
+                            <pre><code>// System Status: Operational
+const profile = {
+    focus: "Automation & Embedded Systems",
+    stack: ["Python", "MQL5", "Siemens PLC", "MATLAB"],
+    status: "Ready for Deployment"
+};</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section id="about" class="section reveal">
+                    <div class="section-header">
+                        <h2>About Me</h2>
+                        <p>Engineering background and core approach</p>
+                    </div>
+                    <div class="about-content">
+                        <p>I am an Electrical and Electronics Engineering graduate specializing in industrial automation, programmable logic controllers (PLCs), and data-driven software tools. My work combines rigorous hardware design with practical execution—ranging from telemetry network simulations to algorithmic trading models.</p>
+                        <div class="lang-tags">
+                            <span>English (Fluent)</span>
+                            <span>Swahili (Native)</span>
+                            <span>German (B1/B2)</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Featured Projects Section -->
+                <section id="projects" class="section reveal">
+                    <div class="section-header">
+                        <h2>Featured Projects</h2>
+                        <p>Selected engineering designs and quantitative models</p>
+                    </div>
+                    <div class="grid-container">
+                        <a href="projects/zigbee-amr.html" class="card card-link">
+                            <div class="card-meta">
+                                <span class="tag">Embedded Systems</span>
+                                <span class="badge-num">01</span>
+                            </div>
+                            <h3>Zigbee AMR System</h3>
+                            <p>Designed and simulated an IEEE 802.15.4 energy metering network using MATLAB/Simulink and EasyEDA with AODV mesh routing.</p>
+                            <div class="tech-stack">
+                                <span>MATLAB</span><span>EasyEDA</span><span>Zigbee</span>
+                            </div>
+                        </a>
+                        
+                        <a href="projects/kalman-mql5.html" class="card card-link">
+                            <div class="card-meta">
+                                <span class="tag">Quantitative Dev</span>
+                                <span class="badge-num">02</span>
+                            </div>
+                            <h3>Kalman Filter MQL5 EA</h3>
+                            <p>Built and backtested hybrid trading models combining 1D Kalman Filters and Markov Chain state transitions for automated execution.</p>
+                            <div class="tech-stack">
+                                <span>Python</span><span>MQL5</span><span>MetaTrader 5</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- External Articles Section -->
+                <section id="articles" class="section reveal">
+                    <div class="section-header">
+                        <h2>External Articles</h2>
+                        <p>Technical writing and engineering breakdowns published online</p>
+                    </div>
+                    <div class="grid-container">
+                        <a href="https://medium.com" rel="noopener noreferrer" class="card article-card">
+                            <div class="article-source">Medium ↗</div>
+                            <h3>Optimizing Embedded Communication Networks</h3>
+                            <p>A deep dive into wireless protocols and mesh routing efficiency for industrial energy metering systems.</p>
+                        </a>
+                        <a href="https://dev.to" rel="noopener noreferrer" class="card article-card">
+                            <div class="article-source">Dev.to ↗</div>
+                            <h3>Integrating ONNX Models into MetaTrader 5</h3>
+                            <p>Exporting gradient-boosting machine learning models from Python for real-time trade signal filtering.</p>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Skills Section -->
+                <section id="skills" class="section reveal">
+                    <div class="section-header">
+                        <h2>Technical Skills</h2>
+                        <p>Technologies and platforms I work with</p>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Languages & Dev</h3>
+                            <p>Python, C/C++, MQL5, SQL, HTML/CSS, JavaScript</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Engineering & Automation</h3>
+                            <p>MATLAB/Simulink, Siemens TIA Portal, EasyEDA, MetaTrader 5</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Environments & Workflows</h3>
+                            <p>Linux, Git, VS Code, Google Colab</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section id="contact" class="section reveal contact-section">
+                    <div class="section-header" style="margin-bottom: 1rem;">
+                        <h2>Get In Touch</h2>
+                    </div>
+                    <div class="contact-box">
+                        <p>Feel free to reach out for engineering roles, collaborations, or inquiries at <a href="mailto:contact@example.com" style="color: var(--accent-teal); text-decoration: none;">contact@example.com</a></p>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- Footer -->
+            <footer>
+                <div class="footer-content">
+                    <p>&copy; 2026 Duncan Mwaura. Built with precision.</p>
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Script File -->
+    <script src="js/main.js"></script>
+</body>
+</html>
