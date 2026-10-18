@@ -1,14 +1,52 @@
 /* ==========================================
-   Portfolio Interactivity, Smooth Scroll & PCB Animation
+   Portfolio Interactivity, Smooth Scroll, 
+   Dynamic Rendering & PCB Animation
    ================================---------- */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Smooth Scroll Momentum Engine (Lerp Loop)
+    // 1. Dynamic Content Rendering from data.js
+    function renderDynamicContent() {
+        if (typeof portfolioData === 'undefined') return;
+
+        // Render Projects Grid
+        const projectsGrid = document.getElementById('projects-grid');
+        if (projectsGrid) {
+            projectsGrid.innerHTML = portfolioData.projects.map(project => `
+                <a href="${project.link}" class="card card-link">
+                    <div class="card-meta">
+                        <span class="tag">${project.category}</span>
+                        <span class="badge-num">${project.badgeNum}</span>
+                    </div>
+                    <h3>${project.title}</h3>
+                    <p>${project.description}</p>
+                    <div class="tech-stack">
+                        ${project.techStack.map(tech => `<span>${tech}</span>`).join('')}
+                    </div>
+                </a>
+            `).join('');
+        }
+
+        // Render Articles Grid
+        const articlesGrid = document.getElementById('articles-grid');
+        if (articlesGrid) {
+            articlesGrid.innerHTML = portfolioData.articles.map(article => `
+                <a href="${article.link}" rel="noopener noreferrer" class="card article-card">
+                    <div class="article-source">${article.source}</div>
+                    <h3>${article.title}</h3>
+                    <p>${article.description}</p>
+                </a>
+            `).join('');
+        }
+    }
+
+    renderDynamicContent();
+
+    // 2. Smooth Scroll Momentum Engine (Lerp Loop)
     const smoothContent = document.getElementById('smooth-content');
     
     let currentY = 0;
     let targetY = 0;
-    const ease = 0.07; // Adjust for momentum weight (lower = smoother/slower, higher = faster)
+    const ease = 0.07; 
 
     function updateBodyHeight() {
         if (smoothContent) {
@@ -32,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     momentumTicker();
 
-    // 2. Mobile Navigation Menu Toggle
+    // 3. Mobile Navigation Menu Toggle
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link, .btn-nav');
@@ -51,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Viewport Detection (Intersection Observer API)
+    // 4. Viewport Detection (Intersection Observer API)
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -71,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(element);
     });
 
-    // 4. Animated PCB Circuit Background with Electron Tracing
+    // 5. Animated PCB Circuit Background with Electron Tracing
     const canvas = document.getElementById('pcb-bg');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');

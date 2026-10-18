@@ -79,57 +79,22 @@ const profile = {
                     </div>
                 </section>
 
-                <!-- Featured Projects Section -->
+                <!-- Featured Projects Section (Dynamic Target) -->
                 <section id="projects" class="section reveal">
                     <div class="section-header">
                         <h2>Featured Projects</h2>
                         <p>Selected engineering designs and quantitative models</p>
                     </div>
-                    <div class="grid-container">
-                        <a href="projects/zigbee-amr.html" class="card card-link">
-                            <div class="card-meta">
-                                <span class="tag">Embedded Systems</span>
-                                <span class="badge-num">01</span>
-                            </div>
-                            <h3>Zigbee AMR System</h3>
-                            <p>Designed and simulated an IEEE 802.15.4 energy metering network using MATLAB/Simulink and EasyEDA with AODV mesh routing.</p>
-                            <div class="tech-stack">
-                                <span>MATLAB</span><span>EasyEDA</span><span>Zigbee</span>
-                            </div>
-                        </a>
-                        
-                        <a href="projects/kalman-mql5.html" class="card card-link">
-                            <div class="card-meta">
-                                <span class="tag">Quantitative Dev</span>
-                                <span class="badge-num">02</span>
-                            </div>
-                            <h3>Kalman Filter MQL5 EA</h3>
-                            <p>Built and backtested hybrid trading models combining 1D Kalman Filters and Markov Chain state transitions for automated execution.</p>
-                            <div class="tech-stack">
-                                <span>Python</span><span>MQL5</span><span>MetaTrader 5</span>
-                            </div>
-                        </a>
-                    </div>
+                    <div id="projects-grid" class="grid-container"></div>
                 </section>
 
-                <!-- External Articles Section -->
+                <!-- External Articles Section (Dynamic Target) -->
                 <section id="articles" class="section reveal">
                     <div class="section-header">
                         <h2>External Articles</h2>
                         <p>Technical writing and engineering breakdowns published online</p>
                     </div>
-                    <div class="grid-container">
-                        <a href="https://medium.com" rel="noopener noreferrer" class="card article-card">
-                            <div class="article-source">Medium ↗</div>
-                            <h3>Optimizing Embedded Communication Networks</h3>
-                            <p>A deep dive into wireless protocols and mesh routing efficiency for industrial energy metering systems.</p>
-                        </a>
-                        <a href="https://dev.to" rel="noopener noreferrer" class="card article-card">
-                            <div class="article-source">Dev.to ↗</div>
-                            <h3>Integrating ONNX Models into MetaTrader 5</h3>
-                            <p>Exporting gradient-boosting machine learning models from Python for real-time trade signal filtering.</p>
-                        </a>
-                    </div>
+                    <div id="articles-grid" class="grid-container"></div>
                 </section>
 
                 <!-- Skills Section -->
@@ -179,7 +144,8 @@ const profile = {
         </div>
     </div>
 
-    <!-- Script File -->
+    <!-- Script Files (data.js must load before main.js) -->
+    <script src="js/data.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
