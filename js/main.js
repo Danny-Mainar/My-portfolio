@@ -87,9 +87,66 @@ function renderArticles(articles) {
 
 // Execute on DOM load
 document.addEventListener('DOMContentLoaded', async () => {
+  // Render Projects & Articles
   const projects = await fetchProjects();
   renderProjects(projects);
 
   const articles = await fetchArticles();
   renderArticles(articles);
+
+  // Handle Contact Form Submission to Supabase
+  const contactForm = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const formStatus = document.getElementById('form-status');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        showStatus('Please fill in all fields.', 'error');
+        return;
+      }
+
+      if (!supabase) {
+        showStatus('Database connection not initialized. Please check configuration.', 'error');
+        return;
+      }
+
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      try {
+        const { error } = await supabase
+          .from('messages')
+          .insert([{ name, email, message }]);
+
+        if (error) throw error;
+
+        showStatus('Message sent successfully! Thank you for reaching out.', 'success');
+        contactForm.reset();
+      } catch (err) {
+        console.error('Error sending message:', err);
+        showStatus('Failed to send message. Please try emailing directly.', 'error');
+      } finally {
+        submitBtn.textContent = 'Send Message';
+        submitBtn.disabled = false;
+      }
+    });
+  }
+
+  function showStatus(text, type) {
+    if (!formStatus) return;
+    formStatus.textContent = text;
+    formStatus.style.display = 'block';
+    formStatus.style.color = type === 'success' ? '#00ffcc' : '#ff4d4d';
+    
+    setTimeout(() => {
+      formStatus.style.display = 'none';
+    }, 5000);
+  }
 });
