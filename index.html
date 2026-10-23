@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danny Mwaura | Software & Engineering Portfolio</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" href="assets/images/logo.jpg" type="image/jpeg">
+</head>
+<body>
+
+  <!-- Cinematic Background Video Container -->
+  <div id="video-bg-container">
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="assets/videos/pcb-loop.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="nav-brand">
+      <a href="#hero" class="logo-link">
+        <img src="assets/images/logo.jpg" alt="Danny Mwaura Logo" class="site-logo">
+        <span class="brand-title">Danny Mwaura</span>
+      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#articles">Articles</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section id="hero" class="hero-section">
+      <div class="hero-container">
+        <h1 class="hero-title">Engineering Systems & Software Solutions</h1>
+        <p class="hero-subtitle">
+          Specializing in embedded systems, quantitative models, and robust web architectures.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="section-container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <p>
+            I am an Electrical and Electronics Engineering graduate specializing in quantitative development, automation, and full-stack solutions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Supabase Dynamic Hook: Projects Section -->
+    <section id="projects" class="projects-section">
+      <div class="section-container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div id="projects-grid" class="grid-container">
+          <!-- Dynamically populated by Supabase or fallback -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Supabase Dynamic Hook: Articles Section -->
+    <section id="articles" class="articles-section">
+      <div class="section-container">
+        <h2 class="section-title">Articles & Technical Writing</h2>
+        <div id="articles-grid" class="grid-container">
+          <!-- Dynamically populated by Supabase or fallback -->
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="section-container">
+        <h2 class="section-title">Get In Touch</h2>
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your Name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Your message..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 Danny Mwaura. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://github.com/Danny-Mainar" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts Loaded in Sequence (Supabase Fallback & Main Module) -->
+  <script src="js/fallback-data.js"></script>
+  <script type="module" src="js/main.js"></script>
+
+</body>
+</html>

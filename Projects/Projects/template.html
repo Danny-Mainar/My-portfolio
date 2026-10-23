@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Project Details | Duncan Mwaura</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .project-hero {
+            padding: 8rem 2rem 4rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .project-meta-bar {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }
+        .project-body {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem 2rem;
+        }
+        .project-body h2 {
+            font-size: 1.8rem;
+            color: var(--text-main);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .project-body p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+        }
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .spec-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .spec-card h4 {
+            color: var(--accent-teal);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .spec-card p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        .code-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--accent-teal);
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-teal);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        .back-link:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animated PCB Circuit Background Canvas -->
+    <canvas id="pcb-bg"></canvas>
+
+    <!-- Navigation Header -->
+    <header id="header">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">DM<span class="dot">.</span></a>
+            <nav class="nav-menu">
+                <a href="../index.html#about" class="nav-link">About</a>
+                <a href="../index.html#projects" class="nav-link">Projects</a>
+                <a href="../index.html#articles" class="nav-link">Articles</a>
+                <a href="../index.html#skills" class="nav-link">Skills</a>
+                <a href="../index.html#contact" class="btn-nav">Contact</a>
+            </nav>
+            <button id="hamburger" aria-label="Toggle navigation menu">☰</button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <div id="project-content">
+            <!-- Dynamically injected via template script -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Duncan Mwaura. Built with precision.</p>
+            <div class="social-links">
+                <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Files -->
+    <script src="../js/data.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        // Dynamic Template Population Script
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectId = urlParams.get('id');
+            
+            const project = portfolioData.projects.find(p => p.id === projectId);
+            const container = document.getElementById('project-content');
+
+            if (!project) {
+                container.innerHTML = `
+                    <section class="project-hero">
+                        <a href="../index.html#projects" class="back-link">&larr; Back to Portfolio</a>
+                        <h1>Project Not Found</h1>
+                        <p>The requested project could not be loaded.</p>
+                    </section>`;
+                return;
+            }
+
+            // Set Browser Title
+            document.getElementById('page-title').textContent = `${project.title} | Duncan Mwaura`;
+
+            // Build Template HTML
+            container.innerHTML = `
+                <section class="project-hero">
+                    <a href="../index.html#projects" class="back-link">&larr; Back to Portfolio</a>
+                    <span class="badge">${project.fullCategory}</span>
+                    <h1>${project.fullTitle}</h1>
+                    <div class="project-meta-bar">
+                        <span><strong>${project.metaDomain}</strong></span>
+                        <span><strong>${project.metaTools}</strong></span>
+                    </div>
+                </section>
+
+                <section class="project-body">
+                    <h2>System Overview & Architecture</h2>
+                    <p>${project.overview}</p>
+                    
+                    <div class="specs-grid">
+                        ${project.specs.map(spec => `
+                            <div class="spec-card">
+                                <h4>${spec.title}</h4>
+                                <p>${spec.desc}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <h2>${project.section1Header}</h2>
+                    <p>${project.section1Text}</p>
+
+                    ${project.hasCode ? `
+                        <div class="code-block">
+                            <pre>${project.codeSnippet}</pre>
+                        </div>
+                    ` : ''}
+
+                    <h2>${project.section2Header}</h2>
+                    <p>${project.section2Text}</p>
+
+                    <div style="margin-top: 3rem; display: flex; gap: 1rem;">
+                        <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-primary">View GitHub Repository</a>
+                        <a href="../index.html#contact" class="btn btn-secondary">Discuss This Project</a>
+                    </div>
+                </section>
+            `;
+        });
+    </script>
+</body>
+</html>
