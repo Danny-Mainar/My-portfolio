@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danny Mwaura | Software & Engineering Portfolio</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" href="assets/images/logo.jpg" type="image/jpeg">
+</head>
+<body>
+
+  <!-- Cinematic Background Video Container -->
+  <div id="video-bg-container">
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="assets/videos/pcb-loop.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="nav-brand">
+      <a href="#hero" class="logo-link">
+        <img src="assets/images/logo.jpg" alt="Danny Mwaura Logo" class="site-logo">
+        <span class="brand-title">Danny Mwaura</span>
+      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#articles">Articles</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section id="hero" class="hero-section">
+        <div class="hero-container">
+          <div class="hero-badge">B.Sc. Electrical & Electronics Engineering Graduate</div>
+          <h1 class="hero-title">Duncan Mwaura</h1>
+          <h2 class="hero-tagline">Electrical Engineer | Automation, Telecommunications & Quantitative Systems</h2>
+          
+          <p class="hero-subtitle">
+            Specializing in industrial automation & PLCs, telecommunications engineering, machine learning pipelines, data analysis, and quantitative trading model research.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-outline">View Engineering Projects</a>
+            <a href="#articles" class="btn btn-outline">Technical Writing</a>
+            <a href="#contact" class="btn btn-outline">Get In Touch</a>
+          </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="section-container">
+          <h2 class="section-title">About Me</h2>
+          <div class="about-content">
+            <p>
+              I am an <strong>Electrical and Electronics Engineering graduate</strong> with a diverse technical foundation spanning <strong>industrial automation, telecommunications, machine learning, and quantitative financial modeling</strong>. My work bridges physical hardware systems and advanced data architectures, combining rigorous engineering principles with robust software execution.
+            </p>
+            <p>
+              Whether programming programmable logic controllers (PLCs), simulating telecommunication networks, or researching and building quantitative algorithmic models, I focus on system optimization, data-driven analysis, and clear technical documentation.
+            </p>
+
+            <div class="skills-grid">
+              <div class="skill-category">
+                <h3>Industrial Automation & PLCs</h3>
+                <p>PLC Programming (Siemens SMSCP certified), SCADA systems, industrial control, and embedded hardware integration.</p>
+              </div>
+              <div class="skill-category">
+                <h3>Telecommunications & Systems</h3>
+                <p>Wireless communications, network modeling, signal processing, and physical layer performance simulation (MATLAB).</p>
+              </div>
+              <div class="skill-category">
+                <h3>Quant Modeling & Machine Learning</h3>
+                <p>Algorithmic trading model research, MQL5 Expert Advisors, time-series forecasting, and Python data pipelines.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Supabase Dynamic Hook: Projects Section -->
+    <section id="projects" class="projects-section">
+      <div class="section-container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div id="projects-grid" class="grid-container">
+          <!-- Dynamically populated by Supabase or fallback -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Supabase Dynamic Hook: Articles Section -->
+    <section id="articles" class="articles-section">
+      <div class="section-container">
+        <h2 class="section-title">Articles & Technical Writing</h2>
+        <div id="articles-grid" class="grid-container">
+          <!-- Dynamically populated by Supabase or fallback -->
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+  <div class="section-container">
+    <h2 class="section-title">Get In Touch</h2>
+    
+    <div class="contact-wrapper">
+      <!-- Direct Contact Details -->
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <p>Feel free to reach out directly via email or phone for inquiries, software solutions, or engineering collaboration.</p>
+        
+        <div class="info-item">
+          <span class="info-label">Email:</span>
+          <a href="mailto:dannymaina36@gmail.com" class="info-link">dannymaina36@gmail.com</a>
+        </div>
+        
+        <div class="info-item">
+          <span class="info-label">Phone:</span>
+          <a href="tel:+254113830366" class="info-link">+254 113 830 366</a>
+        </div>
+
+        <div class="info-item">
+          <span class="info-label">Location:</span>
+          <span class="info-text">Nairobi / Machakos, Kenya</span>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <form id="contact-form" class="contact-form">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required placeholder="Your Name">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+  </div>
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required placeholder="Your message..."></textarea>
+  </div>
+  <button type="submit" id="submit-btn" class="btn btn-primary">Send Message</button>
+  <p id="form-status" style="margin-top: 1rem; font-size: 0.9rem; display: none;"></p>
+</form>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 Danny Mwaura. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://github.com/Danny-Mainar" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts Loaded in Sequence (Supabase Fallback & Main Module) -->
+  <script src="js/fallback-data.js"></script>
+  <script type="module" src="js/main.js"></script>
+
+</body>
+</html>
